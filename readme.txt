@@ -1,0 +1,2 @@
+Consegna
+Ripetiamo l'esercizio sul carosello ma questa volta implementando l'autoplay. Non dovete rifare tutto da capo, partite da quanto già fatto. Create una nuova repo e dentro copiateci i file dell'esercizio vecchio. Quindi fate un primo push. Suddividetevi poi il lavoro in step come abbiamo sempre fatto su un file di testo quindi fate un altro push. Potete poi cominciare a lavorare sull'esercizio.
