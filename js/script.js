@@ -117,4 +117,15 @@ function autoPlay(){
     }
 }
 
-setInterval(autoPlay, 1000);
+const autoplay_btn = document.getElementById("auto")
+let myInterval ;
+
+autoplay_btn.addEventListener('click', function(){
+    myInterval = setInterval(autoPlay, 1000);
+})
+
+const stop_btn = document.getElementById("stop")
+
+stop_btn.addEventListener('click', function(){
+    clearInterval(myInterval);
+})
