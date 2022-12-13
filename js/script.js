@@ -1,3 +1,30 @@
+// DEFINISCO LA FUNAZIONE NEXT
+
+function goToNextSlide(){
+    if(itemActive < items.length - 1){
+        
+        items[itemActive].classList.remove('active');
+        circles[itemActive].classList.remove('active');
+
+        itemActive++;
+
+        items[itemActive].classList.add('active');
+        circles[itemActive].classList.add('active');
+    }
+    else{
+
+        items[itemActive].classList.remove('active');
+        circles[itemActive].classList.remove('active');
+
+
+        itemActive = 0;
+
+        items[itemActive].classList.add('active');
+        circles[itemActive].classList.add('active');
+
+    }
+};
+
 //Creo array immagini
 const imagesArray = [
     "01.webp",
@@ -38,31 +65,7 @@ circles[itemActive].classList.add('active');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
-next.addEventListener('click', function(){
-
-    if(itemActive < items.length - 1){
-        
-        items[itemActive].classList.remove('active');
-        circles[itemActive].classList.remove('active');
-
-        itemActive++;
-
-        items[itemActive].classList.add('active');
-        circles[itemActive].classList.add('active');
-    }
-    else{
-
-        items[itemActive].classList.remove('active');
-        circles[itemActive].classList.remove('active');
-
-
-        itemActive = 0;
-
-        items[itemActive].classList.add('active');
-        circles[itemActive].classList.add('active');
-
-    }
-});
+next.addEventListener('click', goToNextSlide());
 
 prev.addEventListener('click', function(){
 
@@ -91,41 +94,14 @@ prev.addEventListener('click', function(){
     }
 });
 
-
-function autoPlay(){
-    if(itemActive < items.length - 1){
-        
-        items[itemActive].classList.remove('active');
-        circles[itemActive].classList.remove('active');
-
-        itemActive++;
-
-        items[itemActive].classList.add('active');
-        circles[itemActive].classList.add('active');
-    }
-    else{
-
-        items[itemActive].classList.remove('active');
-        circles[itemActive].classList.remove('active');
-
-
-        itemActive = 0;
-
-        items[itemActive].classList.add('active');
-        circles[itemActive].classList.add('active');
-
-    }
-}
-
 const autoplay_btn = document.getElementById("auto")
 let myInterval ;
 
 autoplay_btn.addEventListener('click', function(){
-    myInterval = setInterval(autoPlay, 1000);
+    myInterval = setInterval(goToNextSlide, 1000);
 })
 
 const stop_btn = document.getElementById("stop")
-
 stop_btn.addEventListener('click', function(){
     clearInterval(myInterval);
 })
